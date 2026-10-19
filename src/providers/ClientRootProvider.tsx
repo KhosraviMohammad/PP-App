@@ -7,6 +7,7 @@ import { selectThemeDirection } from "@/store/selectors/themeSelectors";
 import ReduxProvider from "./ReduxProvider";
 import MaterialUIProvider from "./MaterialUIProvider";
 
+import { LanguageProvider } from "@/context/LanguageContext";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
@@ -75,7 +76,7 @@ function ClientAppContent({ children }: { children: React.ReactNode }) {
           },
         }}
       />
-      {children}
+      <LanguageProvider>{children}</LanguageProvider>
     </>
   );
 }

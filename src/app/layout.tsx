@@ -2,8 +2,8 @@ import React from "react";
 import ClientRootProvider from "@/providers/ClientRootProvider";
 
 export const metadata = {
-  title: "CAVAX | صرافی آنلاین تتر",
-  description: "معاملات امن، سریع و هوشمند تتر با صرافی کاواکس",
+  title: "محمد خسروی | Mohammad Khosravi - Software Engineer & Fullstack Developer",
+  description: "وب‌سایت شخصی و پورتفولیو محمد خسروی، مهندس نرم‌افزار و توسعه‌دهنده فول‌استک | Mohammad Khosravi Personal Portfolio & Blog",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

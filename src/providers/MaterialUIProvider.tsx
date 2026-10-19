@@ -6,7 +6,7 @@ import rtlPlugin from "@mui/stylis-plugin-rtl";
 import { CacheProvider } from "@emotion/react";
 import createCache from "@emotion/cache";
 import { useSelector } from "react-redux";
-import { selectThemeMode, selectThemeDirection } from "@/store/selectors/themeSelectors";
+import { selectThemeDirection, selectThemeMode } from "@/store/selectors/themeSelectors";
 import { createAppTheme } from "@/theme";
 
 interface MaterialUIProviderProps {
@@ -22,12 +22,15 @@ const createCacheWithDirection = (direction: string) => {
 };
 
 export const MaterialUIProvider = ({ children }: MaterialUIProviderProps) => {
-  // Get theme state from Redux
-  const mode = useSelector(selectThemeMode);
+  // Get theme direction and mode from Redux
   const direction = useSelector(selectThemeDirection);
+  const mode = useSelector(selectThemeMode);
 
-  // Create Material-UI theme using modularized theme builder
-  const theme = useMemo(() => createAppTheme(mode, direction), [mode, direction]);
+  // Create Material-UI theme using light mode and dynamic direction
+  const theme = useMemo(
+    () => createAppTheme("light", direction),
+    [direction],
+  );
   const cache = useMemo(() => createCacheWithDirection(direction), [direction]);
 
   return (

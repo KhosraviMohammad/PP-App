@@ -3,7 +3,17 @@ import { getPalette } from "./palette";
 import { typography } from "./typography";
 import { themeComponents } from "./components";
 
-export const createAppTheme = (mode: "light" | "dark", direction: Direction = "rtl"): Theme => {
+export const createAppTheme = (
+  modeOrDirection: "light" | "dark" | Direction = "light",
+  optionalDirection?: Direction,
+): Theme => {
+  const isFirstArgDirection = modeOrDirection === "rtl" || modeOrDirection === "ltr";
+  const direction: Direction = isFirstArgDirection
+    ? modeOrDirection
+    : optionalDirection || "rtl";
+  const mode: "light" | "dark" =
+    !isFirstArgDirection && modeOrDirection === "dark" ? "dark" : "light";
+
   const baseTheme = createTheme({
     direction,
     palette: getPalette(mode),

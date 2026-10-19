@@ -34,6 +34,27 @@ export const typography: ThemeOptions["typography"] = {
     fontSize: "0.875rem",
     lineHeight: 1.5,
   },
+  subtitle1: {
+    fontWeight: 700,
+    fontSize: "1rem",
+    lineHeight: 1.5,
+  },
+  subtitle2: {
+    fontWeight: 700,
+    fontSize: "0.875rem",
+    lineHeight: 1.5,
+  },
+  caption: {
+    fontWeight: 500,
+    fontSize: "0.75rem",
+    lineHeight: 1.4,
+  },
+  overline: {
+    fontWeight: 600,
+    fontSize: "0.75rem",
+    letterSpacing: "0.08em",
+    textTransform: "uppercase",
+  },
   button: {
     fontWeight: 700,
     textTransform: "none",
