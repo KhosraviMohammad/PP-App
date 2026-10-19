@@ -75,11 +75,17 @@ const translations: Record<Language, Record<string, string>> = {
 
     // Projects
     "projects.title": "پروژه‌های شاخص",
-    "projects.subtitle": "برگزیده‌ای از معماری‌ها و سیستم‌هایی که پیاده‌سازی کرده‌ام",
+    "projects.subtitle": "سامانه‌ها و پلتفرم‌های پروداکشن، اسکادا، فین‌تک و امنیت سایبری",
     "projects.viewCode": "سورس کد",
     "projects.viewLive": "مشاهده جزئیات",
+    "projects.viewDetails": "مشاهده جزئیات و تصاویر",
+    "projects.gallery": "گالری اسکرین‌شات‌های سامانه",
+    "projects.screenshotsCount": "تصویر",
+    "projects.technologies": "فناوری‌ها و ابزارهای مورد استفاده:",
+    "projects.highlights": "دستاوردها و ویژگی‌های فنی کلیدی:",
+    "projects.metricsTitle": "شاخص‌ها و معیارهای کلیدی:",
     "projects.status.ongoing": "در حال توسعه",
-    "projects.status.production": "در حال استفاده در پروداکشن",
+    "projects.status.production": "پروداکشن و عملیاتی",
 
     // Experience
     "experience.title": "سوابق شغلی",
@@ -171,9 +177,15 @@ const translations: Record<Language, Record<string, string>> = {
 
     // Projects
     "projects.title": "Featured Projects",
-    "projects.subtitle": "Selected systems and platforms built for production scale",
+    "projects.subtitle": "Enterprise systems across SCADA/IoT, FinTech, SIEM security, and EdTech",
     "projects.viewCode": "Source Code",
     "projects.viewLive": "View Details",
+    "projects.viewDetails": "View Details & Gallery",
+    "projects.gallery": "System Screenshot Gallery",
+    "projects.screenshotsCount": "Screenshots",
+    "projects.technologies": "Technologies & Tools Used:",
+    "projects.highlights": "Key Technical Highlights & Achievements:",
+    "projects.metricsTitle": "Key Performance Metrics:",
     "projects.status.ongoing": "In Development",
     "projects.status.production": "Live in Production",
 

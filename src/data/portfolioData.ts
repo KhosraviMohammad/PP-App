@@ -10,6 +10,8 @@ export interface ProjectItem {
   tags: string[];
   metrics?: { label: { fa: string; en: string }; value: string }[];
   featured: boolean;
+  image: string;
+  gallery: string[];
 }
 
 export interface ExperienceItem {
@@ -101,158 +103,191 @@ export const SKILL_CATEGORIES: SkillCategory[] = [
 
 export const PROJECTS_DATA: ProjectItem[] = [
   {
+    id: "apex-iot",
+    title: {
+      fa: "سامانه هوشمند مانیتورینگ سنسورها و اسکادا (APEX IoT)",
+      en: "APEX Industrial IoT & SCADA Telemetry Platform",
+    },
+    category: { fa: "اینترنت اشیا و مانیتورینگ اسکادا", en: "Industrial IoT & SCADA Telemetry" },
+    badge: { fa: "پایش سنسورها و اسکادا", en: "Sensors & SCADA Telemetry" },
+    status: "production",
+    image: "/images/APEX-IOT/monitoring.png",
+    gallery: [
+      "/images/APEX-IOT/monitoring.png",
+      "/images/APEX-IOT/sensor.png",
+      "/images/APEX-IOT/sensor-chart.png",
+      "/images/APEX-IOT/access.png",
+    ],
+    summary: {
+      fa: "پلتفرم مانیتورینگ متمرکز، مدیریت سنسورهای صنعتی، تله‌متری داده‌ها و کنترل بلادرنگ در بستر اسکادا.",
+      en: "Centralized SCADA & Industrial IoT monitoring platform for real-time sensor telemetry and control.",
+    },
+    description: {
+      fa: "سامانه پیشرفته مانیتورینگ صنعتی و پایش بلادرنگ حسگرها و تجهیزات متصل اینترنت اشیا (IoT). این سیستم تله‌متری ارسالی از سنسورهای صنعتی را دریافت کرده و با تحلیل و پردازش مداوم، پارامترهای محیطی و صنعتی را در داشبورد تعاملی نمایش می‌دهد. شامل نمودارهای بلادرنگ سری‌های زمانی، سیستم ثبت آلارم و هشدارهای آنی، وضعیت آنلاین/آفلاین هر سنسور و مدیریت سطوح دسترسی پیشرفته اپراتورها.",
+      en: "Comprehensive industrial IoT and SCADA monitoring solution architected for continuous real-time oversight of sensors and field telemetry. Processes incoming high-frequency sensor streams into intuitive interactive dashboards with live time-series analytical charts, instant threshold alerts, and multi-tier operator access control.",
+    },
+    highlights: {
+      fa: [
+        "مانیتورینگ بلادرنگ وضعیت حسگرها، نرخ داده‌ها و سلامت تجهیزات متصل",
+        "رسم نمودارهای تحلیلی و مقایسه‌ای سری‌های زمانی سنسورها (Time-Series Charts)",
+        "سیستم هوشمند آلارم، اعلان هشدار حد آستانه و ثبت رخدادهای بحرانی",
+        "سیستم مدیریت سطوح دسترسی اپراتورها، دپارتمان‌ها و ناظران سامانه",
+        "معماری بهینه‌سازی‌شده برای دریافت با توان عملیاتی بالای بسته‌های تله‌متری",
+      ],
+      en: [
+        "Real-time sensor telemetry, throughput metrics, and device health monitoring",
+        "Interactive time-series analytical graphing for multi-variable sensory trends",
+        "Intelligent threshold alerting engine with event logging and audit trails",
+        "Granular role-based access management for operators and supervisors",
+        "High-throughput ingest pipeline optimized for high-frequency IoT packet streams",
+      ],
+    },
+    tags: ["IoT / SCADA", "Time-Series Data", "React / Next.js", "Sensors Monitoring", "Real-Time Telemetry", "Access Control"],
+    metrics: [
+      { label: { fa: "نوع سامانه", en: "Platform Type" }, value: "SCADA & Industrial IoT" },
+      { label: { fa: "نوع داده‌ها", en: "Data Type" }, value: "Time-Series Telemetry" },
+      { label: { fa: "پایش بلادرنگ", en: "Monitoring" }, value: "Real-Time" },
+    ],
+    featured: true,
+  },
+  {
+    id: "cavax-exchange",
+    title: {
+      fa: "صرافی آنلاین تبادل رمزارز کاواکس (معاملات ریال / تتر)",
+      en: "CAVAX Cryptocurrency Exchange (IRR / USDT Platform)",
+    },
+    category: { fa: "فین‌تک، کریپتو و پلتفرم‌های مالی", en: "FinTech & Cryptocurrency Trading" },
+    badge: { fa: "تبادل ریال / تتر و کیف پول", en: "IRR / USDT Fast Exchange" },
+    status: "production",
+    image: "/images/CAVAX/panel.png",
+    gallery: [
+      "/images/CAVAX/panel.png",
+      "/images/CAVAX/Trade.png",
+      "/images/CAVAX/Trade1.png",
+      "/images/CAVAX/cards.png",
+      "/images/CAVAX/history.png",
+      "/images/CAVAX/history_responsive.png",
+    ],
+    summary: {
+      fa: "پلتفرم سریع و امن خرید و فروش ریال به تتر، کیف پول امن، مدیریت کارت‌های بانکی و دفتر معاملات.",
+      en: "Secure, high-speed cryptocurrency exchange for IRR/USDT trading, integrated wallet, and responsive ledger.",
+    },
+    description: {
+      fa: "پلتفرم تبادل کریپتو و صرافی آنلاین متمرکز بر معاملات ریال و تتر (USDT). دارای موتور سریع مبادله و ترید لحظه‌ای، پنل کاربری مدرن تیره با نمایش موجودی و ارزش تخمینی دارایی‌های کیف پول، سیستم تایید و مدیریت کارت‌های بانکی عضو شتاب، گزارش‌گیری و فیلتر پیشرفته تراکنش‌ها و تاریخچه سفارشات به صورت کاملاً واکنش‌گرا و بهینه‌سازی‌شده برای دسکتاپ و موبایل.",
+      en: "Full-scale cryptocurrency exchange and trading platform focused on the IRR/USDT trading pair. Engineered with an instant trade matching module, modern dark-themed user dashboard displaying crypto wallet portfolios, automated bank card authorization, advanced transaction filtering, and full responsive mobile/desktop optimization.",
+    },
+    highlights: {
+      fa: [
+        "موتور ترید آنی ریال به تتر (USDT) با محاسبه خودکار نرخ لحظه‌ای و کارمزد",
+        "طراحی رابط کاربری مدرن، تیره و فوق‌سریع سازگار با انواع نمایشگرها و موبایل",
+        "مدیریت کارت‌ها و حساب‌های بانکی تایید شده با پروتکل‌های امنیتی",
+        "دفتر سفارشات، تاریخچه تراکنش‌ها، گزارش‌های مالی و ردیابی وضعیت تسویه‌ها",
+      ],
+      en: [
+        "Instant IRR/USDT trading execution with real-time rate updates and dynamic fee calculation",
+        "Sleek dark-mode aesthetic with pixel-perfect responsive layouts on mobile and desktop",
+        "Verified bank card integration with security verification workflows",
+        "Comprehensive order books, transaction history, audit trails, and settlement tracking",
+      ],
+    },
+    tags: ["Next.js / React", "TypeScript", "Crypto Trading", "FinTech", "Redux Toolkit", "Responsive Design", "Security"],
+    metrics: [
+      { label: { fa: "جفت ارز اصلی", en: "Primary Pair" }, value: "USDT / IRR" },
+      { label: { fa: "طراحی رابط", en: "UI Experience" }, value: "Mobile Responsive" },
+      { label: { fa: "نوع سرویس", en: "Service" }, value: "Instant Exchange & Wallet" },
+    ],
+    featured: true,
+  },
+  {
     id: "ispm-web",
     title: {
       fa: "سامانه پایش امنیت و تحلیل لاگ ISPM-Web (SIEM)",
       en: "ISPM-Web Security Information & Event Management (SIEM)",
     },
-    category: { fa: "سیستم‌های توزیع‌شده و استریم بلادرنگ", en: "Distributed Systems & Streaming" },
-    badge: { fa: "۱۰۰۰+ ایجنت امنیتی", en: "1,000+ Active Agents" },
+    category: { fa: "امنیت سایبری و استریم بلادرنگ لاگ‌ها", en: "Cybersecurity & Real-Time Log Streaming" },
+    badge: { fa: "۱۰۰۰+ ایجنت امنیتی فعال", en: "1,000+ Active Agents" },
     status: "ongoing",
+    image: "/images/ISPM/policy.png",
+    gallery: [
+      "/images/ISPM/policy.png",
+      "/images/ISPM/user.png",
+      "/images/ISPM/login.png",
+    ],
     summary: {
-      fa: "معماری سیستم مانیتورینگ امنیتی متمرکز با اتصال بیش از ۱۰۰۰ ایجنت ویندوز از طریق Kafka و پروتکل EMQX MQTT با نسخه PWA.",
-      en: "Centralized security monitoring architecture integrating 1,000+ Windows agents via Kafka and EMQX MQTT with PWA support.",
+      fa: "معماری سیستم مانیتورینگ امنیتی متمرکز با اتصال بیش از ۱,۰۰۰ ایجنت ویندوز از طریق Kafka و پروتکل EMQX MQTT.",
+      en: "Centralized security intelligence monitoring 1,000+ Windows endpoints via Kafka and EMQX MQTT.",
     },
     description: {
-      fa: "طراحی معماری کامل با Node.js (Express)، Vite و React. لاگ‌های امنیتی بیش از هزار کلاینت ویندوزی از طریق Apache Kafka استریم و پردازش می‌شوند. جهت کاهش سربار و افزایش سرعت، پروتکل MQTT با EMQX جایگزین وب‌سوکت شده و پنل مدیریتی پیشرفته به همراه احراز هویت دو مرحله‌ای پیاده شده است.",
-      en: "Full architecture design using Node.js (Express), Vite, and React. Real-time streaming pipeline processing logs from 1,000+ Windows agents using Apache Kafka and MongoDB. MQTT over EMQX replaced traditional WebSockets for optimal performance.",
+      fa: "معماری کامل سیستم مانیتورینگ و آنالیز لاگ‌های امنیتی کلاینت‌ها (SIEM). دریافت مداوم و با توان عملیاتی بالای لاگ‌های بیش از هزار کلاینت ویندوزی متصل از طریق Apache Kafka و پروتکل بهینه‌سازی‌شده EMQX MQTT (جایگزین وب‌سوکت سنتی)، همراه با پنل مدیریت خط‌مشی‌ها (Security Policies)، مدیریت کاربران، ایجنت‌ها و اپلیکیشن PWA با احراز هویت دوعاملی.",
+      en: "End-to-end SIEM and distributed log intelligence platform receiving high-throughput security event logs from 1,000+ Windows endpoints via Apache Kafka and lightweight EMQX MQTT protocol. Features centralized security policy configuration, endpoint inventory, and PWA administration with multi-factor authentication.",
     },
     highlights: {
       fa: [
         "یکپارچه‌سازی و مانیتورینگ بلادرنگ بیش از ۱,۰۰۰ ایجنت امنیتی فعال",
-        "استفاده از Apache Kafka برای استریم داده‌ها و ذخیره‌سازی در MongoDB",
-        "پیاده‌سازی پروتکل ارتباطی MQTT به کمک EMQX",
-        "طراحی پنل مدیریت پیشرفته و اپلیکیشن PWA با احراز هویت دوعاملی",
+        "استفاده از Apache Kafka برای پایپ‌لاین استریم داده‌ها و ذخیره‌سازی در MongoDB",
+        "بهره‌گیری از پروتکل سبک و پرسرعت MQTT با سرور EMQX",
+        "مدیریت خط‌مشی‌های امنیتی (Policies) و پنل مدیریت با احراز هویت دوعاملی",
       ],
       en: [
-        "Real-time monitoring and management of 1,000+ Windows security agents",
-        "High-throughput data streaming pipeline powered by Apache Kafka & MongoDB",
-        "Lightweight agent communication using EMQX MQTT protocol",
-        "Enterprise admin dashboard and PWA with Google Authenticator-style MFA",
+        "Real-time monitoring and log ingestion from 1,000+ active Windows endpoints",
+        "Resilient high-volume streaming pipeline with Apache Kafka and MongoDB",
+        "Lightweight message exchange powered by EMQX MQTT protocol",
+        "Centralized security policy distribution and 2FA enterprise administration",
       ],
     },
-    tags: ["Node.js", "React", "Vite", "Apache Kafka", "MQTT / EMQX", "MongoDB", "PWA", "Docker"],
+    tags: ["Node.js", "React", "Vite", "Apache Kafka", "MQTT / EMQX", "MongoDB", "PWA", "Cybersecurity"],
     metrics: [
       { label: { fa: "ایجنت‌های تحت پوشش", en: "Monitored Agents" }, value: "1,000+" },
       { label: { fa: "پروتکل داده", en: "Protocol" }, value: "MQTT (EMQX)" },
-      { label: { fa: "پایپ‌لاین استریم", en: "Pipeline" }, value: "Kafka" },
-    ],
-    featured: true,
-  },
-  {
-    id: "joghraf-webgis",
-    title: {
-      fa: "سامانه WebGIS جغراف (پلتفرم تحلیل داده‌های مکانی)",
-      en: "Joghraf Enterprise WebGIS Platform",
-    },
-    category: { fa: "سامانه‌های اطلاعات مکانی و GIS", en: "Geographic Information Systems" },
-    badge: { fa: "PostGIS & GeoServer", en: "PostGIS & GeoServer" },
-    status: "production",
-    summary: {
-      fa: "سامانه WebGIS با دو دیتابیس مجزا، اکستنشن PostGIS و پروکسی متمرکز بین کلاینت‌ها و GeoServer با پروتکل‌های OGC.",
-      en: "Enterprise WebGIS platform with dual PostgreSQL databases, PostGIS spatial engine, and centralized GeoServer proxy.",
-    },
-    description: {
-      fa: "توسعه پلتفرم اطلاعات مکانی با Django، React و دو دیتابیس مجزا (یک دیتابیس اختصاصی با PostGIS برای عوارض و لایه‌های نقشه و دیگری برای داده‌های سیستمی). پیاده‌سازی پروکسی امن میان کلاینت‌ها و GeoServer با پشتیبانی از پروتکل‌های استاندارد WMS، WFS، WCS و WPS.",
-      en: "Developed with Django, React, and two PostgreSQL instances (one with PostGIS for spatial layers, one for transactional data). Features a custom secure proxy managing GeoServer communication with full OGC standard support (WMS, WFS, WCS, WPS).",
-    },
-    highlights: {
-      fa: [
-        "معماری دو دیتابیسی با پایگاه داده مکانی اختصاصی PostGIS",
-        "پیاده‌سازی پروکسی امن بین کلاینت‌ها و GeoServer",
-        "پشتیبانی کامل از استانداردهای بین‌المللی OGC (WMS, WFS, WCS, WPS)",
-        "رندرینگ سریع لایه‌های نقشه و فیلترهای تحلیلی در فرانت‌اند",
-      ],
-      en: [
-        "Dual database architecture with dedicated PostGIS spatial engine",
-        "Centralized secure proxy between web clients and GeoServer",
-        "Full support for international OGC standards (WMS, WFS, WCS, WPS)",
-        "High-performance client-side layer rendering and spatial querying",
-      ],
-    },
-    tags: ["Django", "React", "PostgreSQL", "PostGIS", "GeoServer", "OGC Protocols", "GIS"],
-    metrics: [
-      { label: { fa: "موتور مکانی", en: "Spatial Engine" }, value: "PostGIS" },
-      { label: { fa: "سرور نقشه", en: "Map Server" }, value: "GeoServer" },
-      { label: { fa: "پروتکل‌ها", en: "Standards" }, value: "WMS/WFS/WCS" },
+      { label: { fa: "پایپ‌لاین استریم", en: "Pipeline" }, value: "Apache Kafka" },
     ],
     featured: true,
   },
   {
     id: "nama-lms",
     title: {
-      fa: "سامانه مدیریت یادگیری Nama LMS و ابزار صدور گواهینامه",
+      fa: "سامانه مدیریت یادگیری سازمانی Nama LMS و طراح گواهینامه",
       en: "Nama LMS & Dynamic Certificate Builder",
     },
-    category: { fa: "سامانه‌های آموزش الکترونیک سازمانی", en: "Enterprise Learning Systems" },
+    category: { fa: "پلتفرم‌های آموزش الکترونیک سازمانی", en: "Enterprise E-Learning & Certificate Systems" },
     badge: { fa: "شهرداری اصفهان و جهاد دانشگاهی", en: "Isfahan Municipality & Jahad" },
     status: "production",
-    summary: {
-      fa: "توسعه سامانه آموزش نما با ایمپورتر اکسل در پس‌زمینه با گزارش آنی، طراحی قالب گواهینامه با Konva.js و پایش سرور با InfluxDB و Grafana.",
-      en: "LMS for major institutions featuring real-time Excel background processing, dynamic canvas certificate designer, and InfluxDB monitoring.",
-    },
-    description: {
-      fa: "مشارکت در توسعه سامانه جامع LMS برای جهاد دانشگاهی تهران، شرکت توکانیرو و آموزش شهروندی شهرداری اصفهان. طراحی و پیاده‌سازی سیستم صدور و طراحی مدرک با Konva.js، ایمپورت فایل‌های حجیم اکسل در Background Tasks همراه با وب‌سوکت گزارش‌دهی لحظه‌ای، و مانیتورینگ منابع سرور با دیتابیس سری‌زمانی InfluxDB و گرافانا.",
-      en: "Fullstack development on Nama LMS deployed for Jahad Daneshgahi Tehran, ToKaniroo, and Municipality of Isfahan. Engineered a visual certificate builder using Konva.js, background Excel file processing with live progress updates, and infrastructure telemetry using InfluxDB and Grafana.",
-    },
-    highlights: {
-      fa: [
-        "ایمپورتر فایل‌های اکسل بزرگ در تسک‌های پس‌زمینه با گزارش‌دهی Real-Time",
-        "طراحی و پیاده‌سازی ابزار ویژوال طراحی قالب مدرک با Konva.js",
-        "پایش بلادرنگ منابع سرورها با InfluxDB و داشبوردهای Grafana",
-        "گسترش سامانه برای سازمان‌های بزرگ با هزاران دانش‌پذیر",
-      ],
-      en: [
-        "Heavy Excel importing executed in background tasks with real-time feedback",
-        "Interactive certificate of completion canvas designer built with Konva.js",
-        "Server telemetry and resource tracking using InfluxDB and Grafana",
-        "Successfully scaled for educational institutions with tens of thousands of users",
-      ],
-    },
-    tags: ["Django", "React", "Konva.js", "InfluxDB", "Grafana", "Celery", "PostgreSQL"],
-    metrics: [
-      { label: { fa: "موتور طراحی", en: "Canvas Engine" }, value: "Konva.js" },
-      { label: { fa: "پایش سرور", en: "Telemetry" }, value: "InfluxDB + Grafana" },
-      { label: { fa: "پردازش", en: "Processing" }, value: "Background Tasks" },
+    image: "/images/NAMA/Dashboard.png",
+    gallery: [
+      "/images/NAMA/Dashboard.png",
+      "/images/NAMA/CardDesign.png",
+      "/images/NAMA/DepartmentManagement.png",
+      "/images/NAMA/BrowsingHistory.png",
+      "/images/NAMA/AccessManagement.png",
+      "/images/NAMA/AccessManagement2.png",
     ],
-    featured: true,
-  },
-  {
-    id: "crm-performance",
-    title: {
-      fa: "سامانه CRM سازمانی و موتور بهینه‌سازی کوئری",
-      en: "Enterprise CRM & High-Performance Query Engine",
-    },
-    category: { fa: "مدیریت ارتباط با مشتری و دیتابیس", en: "CRM & Database Performance" },
-    badge: { fa: "کاهش زمان کوئری از ۸ ثانیه به ۰.۸۵ ثانیه", en: "8s to 0.85s Optimization" },
-    status: "production",
     summary: {
-      fa: "تکمیل بک‌اند سیستم CRM پروژه‌های Isfpak، ShipshopApp و IranLocation، احراز هویت چندعاملی، نرمال‌سازی MariaDB و تشخیص چهره.",
-      en: "Production CRM backend for major commerce projects with MFA, face detection integration, and 8x query optimization.",
+      fa: "سامانه آموزش سازمانی شهرداری اصفهان و جهاد دانشگاهی با طراح گرافیکی مدرک (Konva.js) و پردازش پس‌زمینه اکسل.",
+      en: "Enterprise LMS featuring dynamic canvas certificate designer (Konva.js) and asynchronous bulk processing.",
     },
     description: {
-      fa: "طراحی و توسعه بک‌اند سامانه CRM و پنل مدیریت برای پروژه‌های Isfpak، ShipshopApp و IranLocation. بهینه‌سازی کوئری‌های بسیار سنگین دیتابیس به طوری که زمان اجرای کوئری‌ها از ۸ ثانیه به ۰.۸۵ تا ۱ ثانیه کاهش یافت. پیاده‌سازی MFA با سرویس‌های گوگل، مایکروسافت و پیامک و یکپارچه‌سازی سیستم تشخیص چهره با بک‌اند.",
-      en: "Architected and delivered the backend for an enterprise CRM serving multiple live production applications. Reduced critical database query times from 8.0s to 0.85s via index tuning and QuerySet optimization. Integrated multi-factor authentication and backend facial recognition.",
+      fa: "توسعه سامانه جامع آموزش و مدیریت یادگیری سازمانی (LMS) پیاده‌سازی شده برای نهادهای بزرگی مانند جهاد دانشگاهی تهران، شرکت توکانیرو و آموزش شهروندی شهرداری اصفهان. دارای طراح بصری قالب‌های مدرک و گواهینامه با بوم گرافیکی تعاملی Konva.js، ایمپورت پیشرفته فایل‌های حجیم اکسل در تسک‌های پس‌زمینه با فیدبک لحظه‌ای، و مانیتورینگ منابع سرور با دیتابیس سری زمانی InfluxDB و داشبوردهای گرافانا.",
+      en: "Comprehensive enterprise LMS deployed for prominent organizations including Isfahan Municipality and Jahad Daneshgahi. Features an interactive certificate design suite powered by Konva.js, background asynchronous pipeline for large Excel datasets with live progress feedback, and server telemetry telemetry via InfluxDB and Grafana.",
     },
     highlights: {
       fa: [
-        "بهینه‌سازی خیره‌کننده کوئری‌های سنگین از ۸ ثانیه به زیر ۱ ثانیه",
-        "پیاده‌سازی احراز هویت چند عاملی (Google Auth, Microsoft Auth, SMS)",
-        "نرمال‌سازی اصولی پایگاه داده MariaDB و شاخص‌گذاری پیشرفته",
-        "یکپارچه‌سازی الگوریتم‌های تشخیص چهره (Face Detection) با بک‌اند",
+        "ابزار بصری و پیشرفته طراحی قالب مدرک با Konva.js روی بوم گرافیکی تعاملی",
+        "پردازش فایل‌های حجیم اکسل در تسک‌های پس‌زمینه همراه با گزارش لحظه‌ای پیشرفت",
+        "پایش بلادرنگ منابع سرورها با دیتابیس سری زمانی InfluxDB و داشبوردهای Grafana",
+        "مدیریت کامل دپارتمان‌ها، چارت سازمانی، سطوح دسترسی و سوابق بازدیدها",
       ],
       en: [
-        "Dramatic query optimization reducing execution time from 8s to 0.85s",
-        "Multi-factor authentication (Google Authenticator, Microsoft Auth, SMS)",
-        "Advanced relational schema normalization and index optimization in MariaDB",
-        "Backend facial recognition pipeline integration",
+        "Visual certificate canvas designer built on Konva.js for custom dynamic certs",
+        "Heavy Excel student importing executed in background tasks with real-time feedback",
+        "Telemetry tracking and server resource health with InfluxDB and Grafana",
+        "Department hierarchies, role authorization matrix, and detailed access logs",
       ],
     },
-    tags: ["Python / Django", "MariaDB", "Face Detection", "MFA", "Query Optimization", "Redis"],
+    tags: ["Django", "React", "Konva.js", "InfluxDB", "Grafana", "Celery", "PostgreSQL", "LMS"],
     metrics: [
-      { label: { fa: "بهبود زمان کوئری", en: "Query Speedup" }, value: "8s ➔ 0.85s" },
-      { label: { fa: "احراز هویت", en: "Auth Security" }, value: "MFA + Face" },
-      { label: { fa: "محیط اجرا", en: "Environment" }, value: "Production" },
+      { label: { fa: "موتور طراحی مدرک", en: "Canvas Engine" }, value: "Konva.js" },
+      { label: { fa: "پایش سرور", en: "Telemetry" }, value: "InfluxDB + Grafana" },
+      { label: { fa: "محیط استقرار", en: "Deployment" }, value: "شهرداری اصفهان" },
     ],
     featured: true,
   },

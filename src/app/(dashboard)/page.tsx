@@ -29,11 +29,12 @@ export default function HomePage() {
   return (
     <Box sx={{ width: "100%", overflowX: "hidden" }}>
       <HeroSection />
+      <ProjectsSection />
+
       <AboutSection />
       <SkillsSection />
-      <ProjectsSection />
       <ExperienceSection />
-      <ContactSection />
+      {/* <ContactSection /> */}
     </Box>
   );
 }
