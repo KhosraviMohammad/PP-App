@@ -26,3 +26,4 @@ stats.html
 .next/
 next-env.d.ts
 tsconfig.tsbuildinfo
+.gignore
