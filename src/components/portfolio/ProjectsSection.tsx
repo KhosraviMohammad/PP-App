@@ -18,13 +18,11 @@ import {
   IconButton,
   Divider,
 } from "@mui/material";
-import { alpha } from "@mui/material/styles";
 import {
   FolderSpecial as FolderIcon,
   Close as CloseIcon,
   CheckCircle as CheckCircleIcon,
   Collections as CollectionsIcon,
-  Visibility as VisibilityIcon,
   ArrowForward as ArrowForwardIcon,
   ArrowBack as ArrowBackIcon,
   ChevronLeft as ChevronLeftIcon,
@@ -77,13 +75,12 @@ export const ProjectsSection: React.FC = () => {
             label={t("projects.title")}
             color="primary"
             variant="outlined"
-            sx={{ mb: 1.5, fontWeight: 600 }}
+            sx={{ mb: 1.5 }}
           />
           <Typography
             variant="h2"
             sx={{
               mb: 1.5,
-              fontWeight: 800,
             }}
           >
             {t("projects.title")}
@@ -112,23 +109,7 @@ export const ProjectsSection: React.FC = () => {
                     height: "100%",
                     display: "flex",
                     flexDirection: "column",
-                    borderRadius: 3.5,
-                    border: 1,
-                    borderColor: "divider",
                     overflow: "hidden",
-                    transition: "all 0.35s cubic-bezier(0.4, 0, 0.2, 1)",
-                    "&:hover": {
-                      transform: "translateY(-6px)",
-                      boxShadow: (theme) =>
-                        `0 20px 40px ${alpha(theme.palette.primary.main, 0.16)}`,
-                      borderColor: (theme) => alpha(theme.palette.primary.main, 0.4),
-                      "& .project-card-img": {
-                        transform: "scale(1.05)",
-                      },
-                      "& .project-card-overlay": {
-                        opacity: 1,
-                      },
-                    },
                   }}
                 >
                   {/* Visual Image Header */}
@@ -137,7 +118,7 @@ export const ProjectsSection: React.FC = () => {
                     sx={{
                       position: "relative",
                       width: "100%",
-                      height: { xs: 210, sm: 260 },
+                      height: { xs: 200, sm: 240 },
                       bgcolor: "grey.900",
                       overflow: "hidden",
                       cursor: "pointer",
@@ -145,7 +126,6 @@ export const ProjectsSection: React.FC = () => {
                   >
                     <Box
                       component="img"
-                      className="project-card-img"
                       src={proj.image}
                       alt={isRtl ? proj.title.fa : proj.title.en}
                       sx={{
@@ -154,7 +134,6 @@ export const ProjectsSection: React.FC = () => {
                         objectFit: "cover",
                         objectPosition: "top center",
                         display: "block",
-                        transition: "transform 0.5s cubic-bezier(0.4, 0, 0.2, 1)",
                       }}
                     />
 
@@ -162,9 +141,9 @@ export const ProjectsSection: React.FC = () => {
                     <Box
                       sx={{
                         position: "absolute",
-                        top: 14,
-                        left: 14,
-                        right: 14,
+                        top: 12,
+                        left: 12,
+                        right: 12,
                         display: "flex",
                         justifyContent: "space-between",
                         alignItems: "center",
@@ -174,116 +153,52 @@ export const ProjectsSection: React.FC = () => {
                     >
                       <Chip
                         size="small"
+                        color={proj.status === "production" ? "success" : "warning"}
                         label={
                           proj.status === "production"
                             ? t("projects.status.production")
                             : t("projects.status.ongoing")
                         }
-                        sx={{
-                          backdropFilter: "blur(10px)",
-                          bgcolor:
-                            proj.status === "production"
-                              ? "rgba(16, 185, 129, 0.9)"
-                              : "rgba(245, 158, 11, 0.9)",
-                          color: "#fff",
-                          fontWeight: 700,
-                          fontSize: "0.74rem",
-                          boxShadow: "0 2px 8px rgba(0,0,0,0.25)",
-                        }}
                       />
 
                       <Chip
                         size="small"
-                        icon={<CollectionsIcon sx={{ fontSize: "15px !important", color: "#fff !important" }} />}
+                        icon={<CollectionsIcon fontSize="small" />}
                         label={`${galleryCount} ${t("projects.screenshotsCount")}`}
                         sx={{
-                          backdropFilter: "blur(10px)",
-                          bgcolor: "rgba(15, 23, 42, 0.78)",
+                          bgcolor: "rgba(0, 0, 0, 0.7)",
                           color: "#fff",
-                          fontWeight: 600,
-                          fontSize: "0.74rem",
-                          boxShadow: "0 2px 8px rgba(0,0,0,0.3)",
                         }}
                       />
                     </Box>
-
-                    {/* Hover Visual Prompt Overlay */}
-                    <Box
-                      className="project-card-overlay"
-                      sx={{
-                        position: "absolute",
-                        inset: 0,
-                        bgcolor: "rgba(15, 23, 42, 0.5)",
-                        backdropFilter: "blur(2px)",
-                        opacity: 0,
-                        display: "flex",
-                        alignItems: "center",
-                        justifyContent: "center",
-                        transition: "opacity 0.3s ease",
-                        zIndex: 1,
-                      }}
-                    >
-                      <Box
-                        sx={{
-                          display: "flex",
-                          alignItems: "center",
-                          gap: 1,
-                          px: 2.2,
-                          py: 1,
-                          borderRadius: 999,
-                          bgcolor: "rgba(255, 255, 255, 0.95)",
-                          color: "#0f172a",
-                          fontWeight: 700,
-                          fontSize: "0.85rem",
-                          boxShadow: "0 8px 20px rgba(0,0,0,0.35)",
-                        }}
-                      >
-                        <VisibilityIcon sx={{ fontSize: 18, color: "primary.main" }} />
-                        <span>{t("projects.viewDetails")}</span>
-                      </Box>
-                    </Box>
                   </Box>
 
-                  {/* Card Body - Concise and Clean */}
+                  {/* Card Body */}
                   <CardContent sx={{ p: 3, flexGrow: 1, display: "flex", flexDirection: "column" }}>
                     {/* Category */}
-                    <Box sx={{ mb: 1.2 }}>
-                      <Typography
-                        variant="caption"
-                        sx={{
-                          fontWeight: 700,
-                          textTransform: "uppercase",
-                          letterSpacing: 0.5,
-                          color: "primary.main",
-                          bgcolor: (theme) => alpha(theme.palette.primary.main, 0.08),
-                          px: 1.2,
-                          py: 0.4,
-                          borderRadius: 1.5,
-                          display: "inline-block",
-                        }}
-                      >
-                        {isRtl ? proj.category.fa : proj.category.en}
-                      </Typography>
+                    <Box sx={{ mb: 1 }}>
+                      <Chip
+                        size="small"
+                        label={isRtl ? proj.category.fa : proj.category.en}
+                        color="primary"
+                        variant="outlined"
+                      />
                     </Box>
 
                     {/* Title */}
                     <Typography
                       variant="h5"
                       sx={{
-                        fontSize: { xs: "1.1rem", sm: "1.25rem" },
-                        fontWeight: 800,
-                        mb: 1.2,
-                        lineHeight: 1.45,
+                        mb: 1,
                         cursor: "pointer",
                         "&:hover": { color: "primary.main" },
-                        transition: "color 0.2s",
                       }}
                       onClick={() => handleOpenDetails(proj, 0)}
                     >
                       {isRtl ? proj.title.fa : proj.title.en}
                     </Typography>
 
-                    {/* Short Concise Summary */}
+                    {/* Short Summary */}
                     <Typography
                       variant="body2"
                       color="text.secondary"
@@ -301,7 +216,7 @@ export const ProjectsSection: React.FC = () => {
                       {isRtl ? proj.summary.fa : proj.summary.en}
                     </Typography>
 
-                    {/* Tech Pills (Clean, top tags) */}
+                    {/* Tech Pills */}
                     <Box sx={{ mt: "auto", display: "flex", flexWrap: "wrap", gap: 0.8 }}>
                       {proj.tags.slice(0, 4).map((tag) => (
                         <Chip
@@ -309,12 +224,6 @@ export const ProjectsSection: React.FC = () => {
                           label={tag}
                           size="small"
                           variant="outlined"
-                          sx={{
-                            fontSize: "0.75rem",
-                            borderRadius: 1.5,
-                            bgcolor: "action.hover",
-                            borderColor: "divider",
-                          }}
                         />
                       ))}
                       {proj.tags.length > 4 && (
@@ -322,11 +231,6 @@ export const ProjectsSection: React.FC = () => {
                           label={`+${proj.tags.length - 4}`}
                           size="small"
                           variant="outlined"
-                          sx={{
-                            fontSize: "0.72rem",
-                            borderRadius: 1.5,
-                            bgcolor: "action.hover",
-                          }}
                         />
                       )}
                     </Box>
@@ -340,12 +244,6 @@ export const ProjectsSection: React.FC = () => {
                       fullWidth
                       endIcon={isRtl ? <ArrowBackIcon /> : <ArrowForwardIcon />}
                       onClick={() => handleOpenDetails(proj, 0)}
-                      sx={{
-                        borderRadius: 2,
-                        py: 1,
-                        fontWeight: 700,
-                        textTransform: "none",
-                      }}
                     >
                       {t("projects.viewDetails")}
                     </Button>
@@ -357,22 +255,13 @@ export const ProjectsSection: React.FC = () => {
         </Grid>
       </Container>
 
-      {/* Comprehensive Project Details & Gallery Modal */}
+      {/* Project Details & Gallery Modal */}
       <Dialog
         open={Boolean(selectedProject)}
         onClose={handleCloseDetails}
         maxWidth="lg"
         fullWidth
         scroll="body"
-        slotProps={{
-          paper: {
-            sx: {
-              borderRadius: 3.5,
-              overflow: "hidden",
-              bgcolor: "background.paper",
-            },
-          },
-        }}
       >
         {selectedProject && (
           <>
@@ -382,7 +271,7 @@ export const ProjectsSection: React.FC = () => {
                 display: "flex",
                 justifyContent: "space-between",
                 alignItems: "flex-start",
-                p: { xs: 2.5, md: 3 },
+                p: { xs: 2, sm: 3 },
                 borderBottom: 1,
                 borderColor: "divider",
               }}
@@ -394,7 +283,6 @@ export const ProjectsSection: React.FC = () => {
                     label={isRtl ? selectedProject.category.fa : selectedProject.category.en}
                     color="primary"
                     variant="outlined"
-                    sx={{ fontWeight: 600 }}
                   />
                   <Chip
                     size="small"
@@ -404,35 +292,28 @@ export const ProjectsSection: React.FC = () => {
                         : t("projects.status.ongoing")
                     }
                     color={selectedProject.status === "production" ? "success" : "warning"}
-                    sx={{ fontWeight: 600 }}
                   />
                 </Stack>
-                <Typography variant="h4" sx={{ fontWeight: 800, fontSize: { xs: "1.3rem", sm: "1.65rem" } }}>
+                <Typography variant="h4" sx={{ fontSize: { xs: "1.25rem", sm: "1.6rem" } }}>
                   {isRtl ? selectedProject.title.fa : selectedProject.title.en}
                 </Typography>
               </Box>
 
-              <IconButton
-                onClick={handleCloseDetails}
-                sx={{
-                  bgcolor: "action.hover",
-                  "&:hover": { bgcolor: "action.selected" },
-                }}
-              >
+              <IconButton onClick={handleCloseDetails} size="small">
                 <CloseIcon />
               </IconButton>
             </DialogTitle>
 
-            <DialogContent sx={{ p: { xs: 2.5, md: 3.5 } }}>
-              {/* Interactive Screenshot Gallery */}
+            <DialogContent sx={{ p: { xs: 2, sm: 3 } }}>
+              {/* Screenshot Gallery */}
               <Box sx={{ mb: 4 }}>
                 <Stack direction="row" sx={{ alignItems: "center", justifyContent: "space-between", mb: 1.5 }}>
-                  <Typography variant="h6" sx={{ fontWeight: 700, display: "flex", alignItems: "center", gap: 1 }}>
-                    <CollectionsIcon color="primary" />
+                  <Typography variant="h6" sx={{ display: "flex", alignItems: "center", gap: 1 }}>
+                    <CollectionsIcon color="primary" fontSize="small" />
                     <span>{t("projects.gallery")}</span>
                   </Typography>
 
-                  <Typography variant="caption" color="text.secondary" sx={{ fontWeight: 600 }}>
+                  <Typography variant="caption" color="text.secondary">
                     {isRtl
                       ? `تصویر ${activeImageIndex + 1} از ${selectedProject.gallery.length}`
                       : `Image ${activeImageIndex + 1} of ${selectedProject.gallery.length}`}
@@ -444,16 +325,15 @@ export const ProjectsSection: React.FC = () => {
                   sx={{
                     position: "relative",
                     width: "100%",
-                    height: { xs: 260, sm: 400, md: 480 },
-                    bgcolor: "#0a0f1d",
-                    borderRadius: 3,
+                    height: { xs: 240, sm: 380, md: 460 },
+                    bgcolor: "grey.900",
+                    borderRadius: 2,
                     border: 1,
-                    borderColor: "rgba(255,255,255,0.08)",
+                    borderColor: "divider",
                     overflow: "hidden",
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "center",
-                    boxShadow: "0 12px 32px rgba(0, 0, 0, 0.25)",
                   }}
                 >
                   <Box
@@ -465,7 +345,6 @@ export const ProjectsSection: React.FC = () => {
                       maxHeight: "100%",
                       objectFit: "contain",
                       display: "block",
-                      transition: "opacity 0.2s ease-in-out",
                     }}
                   />
 
@@ -475,14 +354,12 @@ export const ProjectsSection: React.FC = () => {
                       onClick={isRtl ? handleNextImage : handlePrevImage}
                       sx={{
                         position: "absolute",
-                        left: 14,
+                        left: 12,
                         top: "50%",
                         transform: "translateY(-50%)",
-                        bgcolor: "rgba(15, 23, 42, 0.75)",
+                        bgcolor: "rgba(0, 0, 0, 0.6)",
                         color: "#fff",
-                        backdropFilter: "blur(8px)",
-                        border: "1px solid rgba(255,255,255,0.2)",
-                        "&:hover": { bgcolor: "rgba(15, 23, 42, 0.95)" },
+                        "&:hover": { bgcolor: "rgba(0, 0, 0, 0.85)" },
                       }}
                     >
                       <ChevronLeftIcon />
@@ -495,14 +372,12 @@ export const ProjectsSection: React.FC = () => {
                       onClick={isRtl ? handlePrevImage : handleNextImage}
                       sx={{
                         position: "absolute",
-                        right: 14,
+                        right: 12,
                         top: "50%",
                         transform: "translateY(-50%)",
-                        bgcolor: "rgba(15, 23, 42, 0.75)",
+                        bgcolor: "rgba(0, 0, 0, 0.6)",
                         color: "#fff",
-                        backdropFilter: "blur(8px)",
-                        border: "1px solid rgba(255,255,255,0.2)",
-                        "&:hover": { bgcolor: "rgba(15, 23, 42, 0.95)" },
+                        "&:hover": { bgcolor: "rgba(0, 0, 0, 0.85)" },
                       }}
                     >
                       <ChevronRightIcon />
@@ -518,13 +393,7 @@ export const ProjectsSection: React.FC = () => {
                     sx={{
                       mt: 2,
                       overflowX: "auto",
-                      py: 0.8,
-                      px: 0.5,
-                      "&::-webkit-scrollbar": { height: 6 },
-                      "&::-webkit-scrollbar-thumb": {
-                        backgroundColor: "divider",
-                        borderRadius: 3,
-                      },
+                      py: 0.5,
                     }}
                   >
                     {selectedProject.gallery.map((thumbSrc, tIdx) => {
@@ -535,21 +404,15 @@ export const ProjectsSection: React.FC = () => {
                           onClick={() => setActiveImageIndex(tIdx)}
                           sx={{
                             flexShrink: 0,
-                            width: { xs: 80, sm: 104 },
-                            height: { xs: 52, sm: 68 },
-                            borderRadius: 2,
+                            width: { xs: 70, sm: 96 },
+                            height: { xs: 46, sm: 62 },
+                            borderRadius: 1.5,
                             overflow: "hidden",
                             cursor: "pointer",
                             border: 2,
                             borderColor: isActive ? "primary.main" : "transparent",
                             opacity: isActive ? 1 : 0.6,
-                            bgcolor: "#0f172a",
-                            boxShadow: isActive ? (theme) => `0 4px 12px ${alpha(theme.palette.primary.main, 0.4)}` : "none",
-                            transition: "all 0.25s ease",
-                            "&:hover": {
-                              opacity: 0.95,
-                              transform: "translateY(-2px)",
-                            },
+                            bgcolor: "grey.900",
                           }}
                         >
                           <Box
@@ -570,10 +433,10 @@ export const ProjectsSection: React.FC = () => {
                 )}
               </Box>
 
-              {/* Metrics Grid if available */}
+              {/* Metrics Grid */}
               {selectedProject.metrics && (
                 <Box sx={{ mb: 3.5 }}>
-                  <Typography variant="subtitle2" sx={{ mb: 1.5, fontWeight: 700, color: "text.primary" }}>
+                  <Typography variant="subtitle2" sx={{ mb: 1.5, color: "text.primary" }}>
                     {t("projects.metricsTitle")}
                   </Typography>
                   <Grid container spacing={2}>
@@ -582,16 +445,16 @@ export const ProjectsSection: React.FC = () => {
                         <Box
                           sx={{
                             p: 2,
-                            borderRadius: 2.5,
-                            bgcolor: (theme) => alpha(theme.palette.primary.main, 0.05),
+                            borderRadius: 2,
+                            bgcolor: "action.hover",
                             border: 1,
-                            borderColor: (theme) => alpha(theme.palette.primary.main, 0.15),
+                            borderColor: "divider",
                           }}
                         >
                           <Typography variant="caption" color="text.secondary" sx={{ display: "block", mb: 0.5 }}>
                             {isRtl ? m.label.fa : m.label.en}
                           </Typography>
-                          <Typography variant="h6" color="primary" sx={{ fontWeight: 800 }}>
+                          <Typography variant="h6" color="primary">
                             {m.value}
                           </Typography>
                         </Box>
@@ -603,7 +466,7 @@ export const ProjectsSection: React.FC = () => {
 
               {/* Detailed Description */}
               <Box sx={{ mb: 3.5 }}>
-                <Typography variant="subtitle2" sx={{ mb: 1, fontWeight: 700, color: "text.primary" }}>
+                <Typography variant="subtitle2" sx={{ mb: 1, color: "text.primary" }}>
                   {isRtl ? "شرح جامع و معماری سامانه:" : "System Architecture & Description:"}
                 </Typography>
                 <Typography
@@ -618,9 +481,9 @@ export const ProjectsSection: React.FC = () => {
                 </Typography>
               </Box>
 
-              {/* Key Technical Highlights Checklist */}
+              {/* Key Technical Highlights */}
               <Box sx={{ mb: 3.5 }}>
-                <Typography variant="subtitle2" sx={{ mb: 1.5, fontWeight: 700, color: "text.primary" }}>
+                <Typography variant="subtitle2" sx={{ mb: 1.5, color: "text.primary" }}>
                   {t("projects.highlights")}
                 </Typography>
 
@@ -628,14 +491,8 @@ export const ProjectsSection: React.FC = () => {
                   {(isRtl ? selectedProject.highlights.fa : selectedProject.highlights.en).map(
                     (hl, hlIdx) => (
                       <Box key={hlIdx} sx={{ display: "flex", alignItems: "flex-start", gap: 1.3 }}>
-                        <CheckCircleIcon color="success" sx={{ fontSize: "20px", mt: 0.3, flexShrink: 0 }} />
-                        <Typography
-                          variant="body2"
-                          sx={{
-                            lineHeight: 1.7,
-                            fontWeight: 500,
-                          }}
-                        >
+                        <CheckCircleIcon color="success" sx={{ fontSize: "18px", mt: 0.3, flexShrink: 0 }} />
+                        <Typography variant="body2" sx={{ lineHeight: 1.7 }}>
                           {hl}
                         </Typography>
                       </Box>
@@ -648,7 +505,7 @@ export const ProjectsSection: React.FC = () => {
 
               {/* Technologies and Tools Used */}
               <Box>
-                <Typography variant="subtitle2" sx={{ mb: 1.5, fontWeight: 700 }}>
+                <Typography variant="subtitle2" sx={{ mb: 1.5 }}>
                   {t("projects.technologies")}
                 </Typography>
 
@@ -659,7 +516,6 @@ export const ProjectsSection: React.FC = () => {
                       label={tag}
                       color="primary"
                       variant="outlined"
-                      sx={{ fontWeight: 600, borderRadius: 2 }}
                     />
                   ))}
                 </Box>
@@ -673,4 +529,3 @@ export const ProjectsSection: React.FC = () => {
 };
 
 export default ProjectsSection;
-

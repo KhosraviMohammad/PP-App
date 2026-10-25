@@ -101,7 +101,6 @@ export const ContactSection: React.FC = () => {
             <Card
               sx={{
                 height: "100%",
-                borderRadius: 3,
                 p: { xs: 3, sm: 4 },
                 display: "flex",
                 flexDirection: "column",
@@ -120,7 +119,7 @@ export const ContactSection: React.FC = () => {
                       sx={{
                         width: 44,
                         height: 44,
-                        borderRadius: "12px",
+                        borderRadius: 2,
                         bgcolor: "action.hover",
                         color: "primary.main",
                         display: "flex",
@@ -155,7 +154,7 @@ export const ContactSection: React.FC = () => {
                       sx={{
                         width: 44,
                         height: 44,
-                        borderRadius: "12px",
+                        borderRadius: 2,
                         bgcolor: "action.hover",
                         color: "success.main",
                         display: "flex",
@@ -192,7 +191,7 @@ export const ContactSection: React.FC = () => {
                       sx={{
                         width: 44,
                         height: 44,
-                        borderRadius: "12px",
+                        borderRadius: 2,
                         bgcolor: "action.hover",
                         color: "secondary.main",
                         display: "flex",
@@ -207,7 +206,7 @@ export const ContactSection: React.FC = () => {
                         {t("contact.location")}
                       </Typography>
                       <Typography variant="body1">
-                        {t("contact.locationVal")}
+                        {isRtl ? PORTFOLIO_INFO.location.fa : PORTFOLIO_INFO.location.en}
                       </Typography>
                     </Box>
                   </Box>
@@ -263,7 +262,6 @@ export const ContactSection: React.FC = () => {
             <Card
               sx={{
                 height: "100%",
-                borderRadius: 3,
                 p: { xs: 3, sm: 4 },
               }}
             >
@@ -284,7 +282,7 @@ export const ContactSection: React.FC = () => {
                 <Alert
                   severity="success"
                   icon={<CheckCircleIcon />}
-                  sx={{ mb: 3, borderRadius: 2 }}
+                  sx={{ mb: 3 }}
                   onClose={() => setSubmitted(false)}
                 >
                   {t("contact.form.success")}
@@ -301,7 +299,6 @@ export const ContactSection: React.FC = () => {
                       value={formState.name}
                       onChange={(e) => setFormState({ ...formState, name: e.target.value })}
                       variant="outlined"
-                      size="medium"
                     />
                   </Grid>
 
@@ -314,7 +311,6 @@ export const ContactSection: React.FC = () => {
                       value={formState.email}
                       onChange={(e) => setFormState({ ...formState, email: e.target.value })}
                       variant="outlined"
-                      size="medium"
                     />
                   </Grid>
 
@@ -325,7 +321,6 @@ export const ContactSection: React.FC = () => {
                       value={formState.subject}
                       onChange={(e) => setFormState({ ...formState, subject: e.target.value })}
                       variant="outlined"
-                      size="medium"
                     />
                   </Grid>
 
@@ -346,18 +341,10 @@ export const ContactSection: React.FC = () => {
                     <Button
                       type="submit"
                       variant="contained"
+                      color="primary"
                       size="large"
                       disabled={loading}
                       endIcon={<SendIcon sx={{ transform: isRtl ? "rotate(180deg)" : "none" }} />}
-                      sx={{
-                        py: 1.3,
-                        px: 4,
-                        background: "linear-gradient(135deg, #2563eb 0%, #06b6d4 100%)",
-                        boxShadow: "0 4px 18px rgba(37, 99, 235, 0.35)",
-                        "&:hover": {
-                          background: "linear-gradient(135deg, #1d4ed8 0%, #0891b2 100%)",
-                        },
-                      }}
                     >
                       {loading ? (isRtl ? "در حال ارسال..." : "Sending...") : t("contact.form.send")}
                     </Button>

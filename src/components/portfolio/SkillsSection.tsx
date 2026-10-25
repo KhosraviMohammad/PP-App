@@ -81,14 +81,7 @@ export const SkillsSection: React.FC = () => {
               <Card
                 sx={{
                   height: "100%",
-                  borderRadius: 3,
                   p: 3,
-                  transition: "transform 0.2s ease, box-shadow 0.2s ease",
-                  "&:hover": {
-                    transform: "translateY(-3px)",
-                    boxShadow: (theme) =>
-                      `0 10px 24px ${theme.palette.mode === "light" ? "rgba(37, 99, 235, 0.12)" : "rgba(0, 0, 0, 0.3)"}`,
-                  },
                 }}
               >
                 <Box sx={{ display: "flex", alignItems: "center", gap: 1.5, mb: 3 }}>
@@ -124,6 +117,7 @@ export const SkillsSection: React.FC = () => {
                         <Typography
                           variant="body2"
                           color={skill.highlight ? "text.primary" : "text.secondary"}
+                          fontWeight={skill.highlight ? 600 : 400}
                         >
                           {skill.name}
                         </Typography>
@@ -137,18 +131,10 @@ export const SkillsSection: React.FC = () => {
                       <LinearProgress
                         variant="determinate"
                         value={skill.level}
+                        color={skill.highlight ? "primary" : "inherit"}
                         sx={{
                           height: 6,
                           borderRadius: 3,
-                          backgroundColor: (theme) =>
-                            theme.palette.mode === "light" ? "rgba(0, 0, 0, 0.06)" : "rgba(255, 255, 255, 0.1)",
-                          "& .MuiLinearProgress-bar": {
-                            borderRadius: 3,
-                            background: (theme) =>
-                              skill.highlight
-                                ? `linear-gradient(90deg, ${theme.palette.primary.main} 0%, ${theme.palette.secondary.main} 100%)`
-                                : theme.palette.primary.light,
-                          },
                         }}
                       />
                     </Box>

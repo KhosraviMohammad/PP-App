@@ -30,10 +30,10 @@ export const HeroSection: React.FC = () => {
   const { isRtl, t } = useLanguage();
 
   const statIcons = [
-    <WorkOutlineIcon key="1" sx={{ color: "#2563eb" }} />,
-    <HubIcon key="2" sx={{ color: "#06b6d4" }} />,
-    <SpeedIcon key="3" sx={{ color: "#10b981" }} />,
-    <StorageIcon key="4" sx={{ color: "#8b5cf6" }} />,
+    <WorkOutlineIcon key="1" color="primary" />,
+    <HubIcon key="2" color="secondary" />,
+    <SpeedIcon key="3" color="success" />,
+    <StorageIcon key="4" color="info" />,
   ];
 
   return (
@@ -44,42 +44,9 @@ export const HeroSection: React.FC = () => {
         position: "relative",
         pt: { xs: 4, md: 8 },
         pb: { xs: 6, md: 10 },
-        overflow: "hidden",
       }}
     >
-      {/* Background ambient glows */}
-      <Box
-        sx={{
-          position: "absolute",
-          top: "10%",
-          left: isRtl ? "auto" : "15%",
-          right: isRtl ? "15%" : "auto",
-          width: 350,
-          height: 350,
-          borderRadius: "50%",
-          background: "radial-gradient(circle, rgba(37,99,235,0.1) 0%, transparent 70%)",
-          filter: "blur(50px)",
-          zIndex: 0,
-          pointerEvents: "none",
-        }}
-      />
-      <Box
-        sx={{
-          position: "absolute",
-          top: "25%",
-          right: isRtl ? "auto" : "10%",
-          left: isRtl ? "10%" : "auto",
-          width: 320,
-          height: 320,
-          borderRadius: "50%",
-          background: "radial-gradient(circle, rgba(6,182,212,0.08) 0%, transparent 70%)",
-          filter: "blur(60px)",
-          zIndex: 0,
-          pointerEvents: "none",
-        }}
-      />
-
-      <Container maxWidth="lg" sx={{ position: "relative", zIndex: 1 }}>
+      <Container maxWidth="lg">
         <Grid container spacing={{ xs: 4, md: 6 }} sx={{ alignItems: "center" }}>
           {/* Left Text Column */}
           <Grid size={{ xs: 12, md: 7 }}>
@@ -93,33 +60,23 @@ export const HeroSection: React.FC = () => {
             />
 
             {/* Greeting & Name */}
-            <Typography
-              variant="h6"
-              color="text.secondary"
-              sx={{ mb: 0.5 }}
-            >
+            <Typography variant="h6" color="text.secondary" sx={{ mb: 0.5 }}>
               {t("hero.greeting")}
             </Typography>
 
             <Typography
               variant="h1"
+              color="primary.main"
               sx={{
-                letterSpacing: "-0.02em",
                 lineHeight: 1.15,
                 mb: 1.5,
-                background: "linear-gradient(135deg, #2563eb 0%, #06b6d4 100%)",
-                WebkitBackgroundClip: "text",
-                WebkitTextFillColor: "transparent",
               }}
             >
               {isRtl ? PORTFOLIO_INFO.name.fa : PORTFOLIO_INFO.name.en}
             </Typography>
 
             {/* Role Title */}
-            <Typography
-              variant="h3"
-              sx={{ mb: 2.5 }}
-            >
+            <Typography variant="h3" sx={{ mb: 2.5 }}>
               {t("hero.role")}
             </Typography>
 
@@ -144,17 +101,10 @@ export const HeroSection: React.FC = () => {
             >
               <Button
                 variant="contained"
+                color="primary"
                 size="large"
                 href="#projects"
                 endIcon={isRtl ? <ArrowBackIcon /> : <ArrowForwardIcon />}
-                sx={{
-                  background: "linear-gradient(135deg, #2563eb 0%, #06b6d4 100%)",
-                  boxShadow: "0 4px 18px rgba(37, 99, 235, 0.35)",
-                  "&:hover": {
-                    background: "linear-gradient(135deg, #1d4ed8 0%, #0891b2 100%)",
-                    boxShadow: "0 6px 24px rgba(37, 99, 235, 0.45)",
-                  },
-                }}
               >
                 {t("hero.cta.projects")}
               </Button>
@@ -189,32 +139,18 @@ export const HeroSection: React.FC = () => {
             <Box
               sx={{
                 position: "relative",
-                width: { xs: 260, sm: 320, md: 360 },
-                height: { xs: 260, sm: 320, md: 360 },
+                width: { xs: 260, sm: 300, md: 340 },
+                height: { xs: 260, sm: 300, md: 340 },
               }}
             >
-              {/* Outer decorative ring */}
-              <Box
-                sx={{
-                  position: "absolute",
-                  inset: -8,
-                  borderRadius: "32px",
-                  background: "linear-gradient(135deg, #2563eb 0%, #06b6d4 50%, #10b981 100%)",
-                  filter: "blur(14px)",
-                  opacity: 0.5,
-                }}
-              />
-
               {/* Card Container */}
-              <Box
+              <Card
                 sx={{
-                  position: "relative",
                   width: "100%",
                   height: "100%",
-                  borderRadius: "28px",
-                  p: "4px",
-                  background: "linear-gradient(135deg, rgba(37,99,235,0.7) 0%, rgba(6,182,212,0.7) 100%)",
-                  boxShadow: "0 20px 40px rgba(0, 0, 0, 0.12)",
+                  borderRadius: 4,
+                  overflow: "hidden",
+                  p: 0.5,
                 }}
               >
                 <Box
@@ -225,13 +161,13 @@ export const HeroSection: React.FC = () => {
                     width: "100%",
                     height: "100%",
                     objectFit: "cover",
-                    borderRadius: "24px",
+                    borderRadius: 3.5,
                     display: "block",
                   }}
                 />
-              </Box>
+              </Card>
 
-              {/* Floating Experience Badge */}
+              {/* Experience Badge */}
               <Box
                 sx={{
                   position: "absolute",
@@ -242,10 +178,6 @@ export const HeroSection: React.FC = () => {
                   borderRadius: 2,
                   px: 2,
                   py: 1.2,
-                  boxShadow: (theme) =>
-                    theme.palette.mode === "light"
-                      ? "0 10px 30px rgba(0, 0, 0, 0.08)"
-                      : "0 10px 30px rgba(0, 0, 0, 0.4)",
                   border: 1,
                   borderColor: "divider",
                   display: "flex",
@@ -257,12 +189,12 @@ export const HeroSection: React.FC = () => {
                   sx={{
                     width: 38,
                     height: 38,
-                    borderRadius: "10px",
-                    background: "linear-gradient(135deg, #2563eb, #06b6d4)",
+                    borderRadius: 1.5,
+                    bgcolor: "primary.main",
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "center",
-                    color: "white",
+                    color: "primary.contrastText",
                   }}
                 >
                   <WorkOutlineIcon fontSize="small" />
@@ -271,10 +203,7 @@ export const HeroSection: React.FC = () => {
                   <Typography variant="subtitle2" sx={{ lineHeight: 1.2 }}>
                     {isRtl ? "۴+ سال تجربه" : "4+ Years Exp"}
                   </Typography>
-                  <Typography
-                    variant="caption"
-                    color="text.secondary"
-                  >
+                  <Typography variant="caption" color="text.secondary">
                     {isRtl ? "سیستم‌های Enterprise" : "Enterprise Systems"}
                   </Typography>
                 </Box>
@@ -287,24 +216,14 @@ export const HeroSection: React.FC = () => {
         <Grid container spacing={2.5} sx={{ mt: { xs: 6, md: 8 } }}>
           {PORTFOLIO_INFO.stats.map((stat, idx) => (
             <Grid key={idx} size={{ xs: 6, md: 3 }}>
-              <Card
-                sx={{
-                  borderRadius: 3,
-                  transition: "transform 0.2s ease, box-shadow 0.2s ease",
-                  "&:hover": {
-                    transform: "translateY(-4px)",
-                    boxShadow: (theme) =>
-                      `0 10px 28px ${theme.palette.mode === "light" ? "rgba(37, 99, 235, 0.12)" : "rgba(0, 0, 0, 0.3)"}`,
-                  },
-                }}
-              >
+              <Card>
                 <CardContent sx={{ p: 2.5, "&:last-child": { pb: 2.5 } }}>
                   <Box sx={{ display: "flex", alignItems: "center", gap: 1.5, mb: 1 }}>
                     <Box
                       sx={{
                         width: 36,
                         height: 36,
-                        borderRadius: "10px",
+                        borderRadius: 1.5,
                         bgcolor: "action.hover",
                         display: "flex",
                         alignItems: "center",
@@ -317,10 +236,7 @@ export const HeroSection: React.FC = () => {
                       {isRtl ? stat.value : stat.enValue}
                     </Typography>
                   </Box>
-                  <Typography
-                    variant="body2"
-                    color="text.secondary"
-                  >
+                  <Typography variant="body2" color="text.secondary">
                     {isRtl ? stat.label.fa : stat.label.en}
                   </Typography>
                 </CardContent>

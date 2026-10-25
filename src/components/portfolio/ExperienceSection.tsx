@@ -65,14 +65,7 @@ export const ExperienceSection: React.FC = () => {
             <Card
               key={exp.id}
               sx={{
-                borderRadius: 3,
                 p: { xs: 3, sm: 4 },
-                position: "relative",
-                transition: "transform 0.2s ease, border-color 0.2s ease",
-                "&:hover": {
-                  transform: "translateY(-3px)",
-                  borderColor: "primary.main",
-                },
               }}
             >
               <Box

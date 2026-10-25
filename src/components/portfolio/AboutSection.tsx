@@ -84,7 +84,6 @@ export const AboutSection: React.FC = () => {
             <Card
               sx={{
                 height: "100%",
-                borderRadius: 3,
                 p: { xs: 2.5, sm: 4 },
               }}
             >
@@ -93,12 +92,12 @@ export const AboutSection: React.FC = () => {
                   sx={{
                     width: 44,
                     height: 44,
-                    borderRadius: "12px",
-                    background: "linear-gradient(135deg, #2563eb, #06b6d4)",
+                    borderRadius: 2,
+                    bgcolor: "primary.main",
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "center",
-                    color: "white",
+                    color: "primary.contrastText",
                   }}
                 >
                   <ArchitectureIcon />
@@ -152,7 +151,6 @@ export const AboutSection: React.FC = () => {
             <Card
               sx={{
                 height: "100%",
-                borderRadius: 3,
                 p: { xs: 2.5, sm: 4 },
                 display: "flex",
                 flexDirection: "column",
@@ -163,12 +161,12 @@ export const AboutSection: React.FC = () => {
                   sx={{
                     width: 44,
                     height: 44,
-                    borderRadius: "12px",
-                    background: "linear-gradient(135deg, #06b6d4, #2563eb)",
+                    borderRadius: 2,
+                    bgcolor: "primary.main",
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "center",
-                    color: "white",
+                    color: "primary.contrastText",
                   }}
                 >
                   <SchoolIcon />
@@ -193,7 +191,7 @@ export const AboutSection: React.FC = () => {
                   <Chip
                     label={isRtl ? "در حال تحصیل" : "In Progress"}
                     color="success"
-                    variant="filled"
+                    size="small"
                     sx={{
                       position: "absolute",
                       top: 14,

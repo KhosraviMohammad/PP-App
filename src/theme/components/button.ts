@@ -23,8 +23,7 @@ export const buttonTheme: Components<Theme> = {
         },
       }),
       outlined: ({ theme }: { theme: Theme }) => ({
-        borderColor:
-          theme.palette.mode === "light" ? "rgba(15, 23, 42, 0.15)" : "rgba(255, 255, 255, 0.2)",
+        borderColor: "rgba(15, 23, 42, 0.15)",
         color: theme.palette.text.primary,
         backgroundColor: "transparent",
         "&:hover": {

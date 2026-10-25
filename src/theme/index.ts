@@ -11,12 +11,10 @@ export const createAppTheme = (
   const direction: Direction = isFirstArgDirection
     ? modeOrDirection
     : optionalDirection || "rtl";
-  const mode: "light" | "dark" =
-    !isFirstArgDirection && modeOrDirection === "dark" ? "dark" : "light";
 
   const baseTheme = createTheme({
     direction,
-    palette: getPalette(mode),
+    palette: getPalette(),
     typography,
     shape: {
       borderRadius: 8,
