@@ -164,7 +164,7 @@ export const Header: React.FC = () => {
                 display: "flex",
                 alignItems: "center",
                 bgcolor: "action.hover",
-                borderRadius: 2,
+                borderRadius: 1,
                 p: "2px",
                 border: 1,
                 borderColor: "divider",
