@@ -186,7 +186,6 @@ export const ProjectsSection: React.FC = () => {
                       color="text.secondary"
                       sx={{
                         lineHeight: 1.7,
-                        mb: 2,
                         display: "-webkit-box",
                         WebkitLineClamp: 2,
                         WebkitBoxOrient: "vertical",
@@ -197,25 +196,6 @@ export const ProjectsSection: React.FC = () => {
                     >
                       {isRtl ? proj.summary.fa : proj.summary.en}
                     </Typography>
-
-                    {/* Tech Pills */}
-                    <Box sx={{ mt: "auto", display: "flex", flexWrap: "wrap", gap: 0.8 }}>
-                      {proj.tags.slice(0, 4).map((tag) => (
-                        <Chip
-                          key={tag}
-                          label={tag}
-                          size="small"
-                          variant="outlined"
-                        />
-                      ))}
-                      {proj.tags.length > 4 && (
-                        <Chip
-                          label={`+${proj.tags.length - 4}`}
-                          size="small"
-                          variant="outlined"
-                        />
-                      )}
-                    </Box>
                   </CardContent>
 
                   {/* Card Action Button */}

@@ -20,11 +20,9 @@ import {
   ArrowForward as ArrowForwardIcon,
   ArrowBack as ArrowBackIcon,
   Collections as CollectionsIcon,
-  CheckCircle as CheckCircleIcon,
   ChevronLeft as ChevronLeftIcon,
   ChevronRight as ChevronRightIcon,
   Layers as LayersIcon,
-  Send as SendIcon,
 } from "@mui/icons-material";
 import { useLanguage } from "@/context/LanguageContext";
 import { PROJECTS_DATA, type ProjectItem } from "@/data/portfolioData";
@@ -325,49 +323,6 @@ export default function ProjectDetailsPage() {
           </CardContent>
         </Card>
 
-        {/* Project Metrics (Key Statistics) */}
-        {project.metrics && project.metrics.length > 0 && (
-          <Box sx={{ mb: { xs: 4, sm: 5 } }}>
-            <Typography variant="h6" sx={{ mb: 2, fontWeight: 700 }}>
-              {t("projects.metricsTitle")}
-            </Typography>
-            <Grid container spacing={2}>
-              {project.metrics.map((m, mIdx) => (
-                <Grid key={mIdx} size={{ xs: 12, sm: 4 }}>
-                  <Card
-                    sx={{
-                      p: 2.5,
-                      borderRadius: 2.5,
-                      bgcolor: "action.hover",
-                      border: 1,
-                      borderColor: "divider",
-                      transition: "border-color 0.2s ease",
-                      "&:hover": {
-                        borderColor: "primary.main",
-                      },
-                    }}
-                  >
-                    <Typography
-                      variant="caption"
-                      color="text.secondary"
-                      sx={{ display: "block", mb: 0.75, fontSize: "0.85rem" }}
-                    >
-                      {isRtl ? m.label.fa : m.label.en}
-                    </Typography>
-                    <Typography
-                      variant="h5"
-                      color="primary.main"
-                      sx={{ fontWeight: 700 }}
-                    >
-                      {m.value}
-                    </Typography>
-                  </Card>
-                </Grid>
-              ))}
-            </Grid>
-          </Box>
-        )}
-
         {/* Detailed Description & Architecture */}
         <Box sx={{ mb: { xs: 4, sm: 5 } }}>
           <Typography
@@ -399,65 +354,6 @@ export default function ProjectDetailsPage() {
               {isRtl ? project.description.fa : project.description.en}
             </Typography>
           </Card>
-        </Box>
-
-        {/* Technical Highlights */}
-        {project.highlights && (
-          <Box sx={{ mb: { xs: 4, sm: 5 } }}>
-            <Typography variant="h5" sx={{ mb: 2, fontWeight: 700 }}>
-              {t("projects.highlights")}
-            </Typography>
-
-            <Card sx={{ p: { xs: 2.5, sm: 3.5 }, borderRadius: 2.5, border: 1, borderColor: "divider" }}>
-              <Stack spacing={2}>
-                {(isRtl ? project.highlights.fa : project.highlights.en).map((hl, hlIdx) => (
-                  <Box
-                    key={hlIdx}
-                    sx={{
-                      display: "flex",
-                      alignItems: "flex-start",
-                      gap: 1.5,
-                    }}
-                  >
-                    <CheckCircleIcon
-                      color="success"
-                      sx={{ fontSize: "20px", mt: 0.4, flexShrink: 0 }}
-                    />
-                    <Typography
-                      variant="body1"
-                      sx={{ lineHeight: 1.8, fontSize: { xs: "0.95rem", sm: "1rem" } }}
-                    >
-                      {hl}
-                    </Typography>
-                  </Box>
-                ))}
-              </Stack>
-            </Card>
-          </Box>
-        )}
-
-        {/* Technologies and Tools Used */}
-        <Box sx={{ mb: { xs: 5, sm: 6 } }}>
-          <Typography variant="h6" sx={{ mb: 2, fontWeight: 700 }}>
-            {t("projects.technologies")}
-          </Typography>
-
-          <Box sx={{ display: "flex", flexWrap: "wrap", gap: 1.2 }}>
-            {project.tags.map((tag) => (
-              <Chip
-                key={tag}
-                label={tag}
-                color="primary"
-                variant="outlined"
-                sx={{
-                  fontSize: "0.9rem",
-                  py: 2,
-                  px: 0.5,
-                  borderRadius: 2,
-                }}
-              />
-            ))}
-          </Box>
         </Box>
 
         <Divider sx={{ my: 4 }} />
