@@ -39,12 +39,6 @@ export const PORTFOLIO_INFO = {
     linkedin: "https://www.linkedin.com/in/mohammad-khosravi-7813/",
     telegram: "https://t.me/mohammad_kh78",
   },
-  stats: [
-    { value: "۴+", enValue: "4+", label: { fa: "سال سابقه حرفه‌ای", en: "Years Experience" } },
-    { value: "+۱,۰۰۰", enValue: "1,000+", label: { fa: "ایجنت فعال امنیتی متصل", en: "Active Monitored Agents" } },
-    { value: "۸x", enValue: "8x", label: { fa: "افزایش سرعت کوئری‌ها", en: "Query Speedup" } },
-    { value: "+۵", enValue: "5+", label: { fa: "سامانه Enterprise پروداکشن", en: "Enterprise Production Systems" } },
-  ],
 };
 
 export const SKILL_CATEGORIES: SkillCategory[] = [
@@ -114,7 +108,7 @@ export const PROJECTS_DATA: ProjectItem[] = [
       "/images/.gignore/projects/APEX-IOT/access.png",
     ],
     summary: {
-      fa: "توسعه سامانه یکپارچه اینترنت اشیای صنعتی و اسکادا برای پایش و کنترل بلادرنگ سنسورها و تجهیزات صنعتی.",
+      fa: "پلتفرم یکپارچه پایش تله‌متری، تحلیل سری‌های زمانی و کنترل بلادرنگ تجهیزات و حسگرهای صنعتی.",
       en: "Centralized SCADA & Industrial IoT monitoring platform for real-time sensor telemetry and control.",
     },
     description: {
@@ -141,7 +135,7 @@ export const PROJECTS_DATA: ProjectItem[] = [
       "/images/.gignore/projects/CAVAX/history_responsive.png",
     ],
     summary: {
-      fa: "توسعه رابط کاربری پلتفرم تبادل رمزارز کاواکس با تمرکز بر معاملات ریال و تتر، مدیریت کیف پول و نمایش اطلاعات مالی کاربران.",
+      fa: "پلتفرم معاملاتی رمزارز برای تبادل سریع ریال و تتر، مدیریت یکپارچه کیف پول و پیگیری تراکنش‌ها.",
       en: "Secure, high-speed cryptocurrency exchange for IRR/USDT trading, integrated wallet, and responsive ledger.",
     },
     description: {
@@ -153,8 +147,8 @@ export const PROJECTS_DATA: ProjectItem[] = [
   {
     id: "ispm-web",
     title: {
-      fa: "سامانه پایش امنیت و تحلیل لاگ ISPM-Web (SIEM)",
-      en: "ISPM-Web Security Information & Event Management (SIEM)",
+      fa: "سامانه یکپارچه پایش امنیت و مدیریت رخدادهای امنیتی سازمانی (ISPM)",
+      en: "Integrated Enterprise Security Monitoring & Incident Management System (ISPM)",
     },
     category: { fa: "امنیت سایبری و استریم بلادرنگ لاگ‌ها", en: "Cybersecurity & Real-Time Log Streaming" },
     status: "ongoing",
@@ -165,20 +159,20 @@ export const PROJECTS_DATA: ProjectItem[] = [
       "/images/.gignore/projects/ISPM/login.png",
     ],
     summary: {
-      fa: "معماری سیستم مانیتورینگ امنیتی متمرکز با اتصال بیش از ۱,۰۰۰ ایجنت ویندوز از طریق Kafka و پروتکل EMQX MQTT.",
-      en: "Centralized security intelligence monitoring 1,000+ Windows endpoints via Kafka and EMQX MQTT.",
+      fa: "پایش متمرکز رویدادها، جمع‌آوری و تحلیل لاگ‌ها و شناسایی تهدیدات امنیتی در زیرساخت‌های سازمانی و بانکی.",
+      en: "Centralized event monitoring, log analysis, and security threat detection for enterprise and banking infrastructures.",
     },
     description: {
-      fa: "معماری کامل سیستم مانیتورینگ و آنالیز لاگ‌های امنیتی کلاینت‌ها (SIEM). دریافت مداوم و با توان عملیاتی بالای لاگ‌های بیش از هزار کلاینت ویندوزی متصل از طریق Apache Kafka و پروتکل بهینه‌سازی‌شده EMQX MQTT (جایگزین وب‌سوکت سنتی)، همراه با پنل مدیریت خط‌مشی‌ها (Security Policies)، مدیریت کاربران، ایجنت‌ها و اپلیکیشن PWA با احراز هویت دوعاملی.",
-      en: "End-to-end SIEM and distributed log intelligence platform receiving high-throughput security event logs from 1,000+ Windows endpoints via Apache Kafka and lightweight EMQX MQTT protocol. Features centralized security policy configuration, endpoint inventory, and PWA administration with multi-factor authentication.",
+      fa: "سامانه‌ای سازمانی با هدف افزایش امنیت زیرساخت‌های فناوری اطلاعات در بانک‌ها و ارگان‌ها، با تمرکز بر پایش متمرکز تجهیزات و سامانه‌ها و تحلیل رویدادهای امنیتی.\nاین سامانه به جمع‌آوری و بررسی لاگ‌ها، شناسایی رفتارهای مشکوک و تسهیل فرایند تشخیص و پیگیری رخدادهای امنیتی کمک می‌کند.\nبا فراهم‌سازی دید متمرکز از وضعیت زیرساخت، امکان نظارت بهتر بر فعالیت‌ها و بررسی تهدیدات احتمالی را برای کارشناسان امنیت فراهم می‌سازد.\nهدف پروژه، بهبود نظارت امنیتی و افزایش آمادگی سازمان‌ها در برابر تهدیدات سایبری است.\n\nنمونه مرتبط با امنیت Active Directory و احراز هویت چندمرحله‌ای (MFA): [مشاهده مطلب در لینکدین](https://www.linkedin.com/posts/hadi-johari_cybersecurity-activedirectory-identitysecurity-ugcPost-7464209697089331200-XTzs/)",
+      en: "An enterprise platform designed to enhance IT infrastructure security across banks and organizations, focusing on centralized monitoring of devices and systems and security event analysis.\nThis system assists in collecting and inspecting logs, identifying suspicious behaviors, and streamlining the detection and investigation of security incidents.\nBy providing a centralized view of infrastructure status, it enables security specialists to better monitor activities and assess potential threats.\nThe project aims to improve security oversight and strengthen organizational readiness against cyber threats.\n\nRelated showcase on Active Directory security and Multi-Factor Authentication (MFA): [View Post on LinkedIn](https://www.linkedin.com/posts/hadi-johari_cybersecurity-activedirectory-identitysecurity-ugcPost-7464209697089331200-XTzs/)",
     },
     featured: true,
   },
   {
     id: "nama-lms",
     title: {
-      fa: "سامانه مدیریت یادگیری سازمانی Nama LMS و طراح گواهینامه",
-      en: "Nama LMS & Dynamic Certificate Builder",
+      fa: "سامانه مدیریت آموزش نما (Nama LMS)",
+      en: "Nama Learning Management System (Nama LMS)",
     },
     category: { fa: "پلتفرم‌های آموزش الکترونیک سازمانی", en: "Enterprise E-Learning & Certificate Systems" },
     status: "production",
@@ -193,12 +187,12 @@ export const PROJECTS_DATA: ProjectItem[] = [
       "/images/.gignore/projects/NAMA/AccessManagement2.png",
     ],
     summary: {
-      fa: "سامانه آموزش سازمانی شهرداری اصفهان و جهاد دانشگاهی با طراح گرافیکی مدرک (Konva.js) و پردازش پس‌زمینه اکسل.",
-      en: "Enterprise LMS featuring dynamic canvas certificate designer (Konva.js) and asynchronous bulk processing.",
+      fa: "پلتفرم جامع مدیریت فرایندهای آموزشی سازمانی، دوره‌ها، سطوح دسترسی و صدور گواهینامه پایان دوره.",
+      en: "Comprehensive enterprise platform for organizational training management, access control, and certificate issuance.",
     },
     description: {
-      fa: "توسعه سامانه جامع آموزش و مدیریت یادگیری سازمانی (LMS) پیاده‌سازی شده برای نهادهای بزرگی مانند جهاد دانشگاهی تهران، شرکت توکانیرو و آموزش شهروندی شهرداری اصفهان. دارای طراح بصری قالب‌های مدرک و گواهینامه با بوم گرافیکی تعاملی Konva.js، ایمپورت پیشرفته فایل‌های حجیم اکسل در تسک‌های پس‌زمینه با فیدبک لحظه‌ای، و مانیتورینگ منابع سرور با دیتابیس سری زمانی InfluxDB و داشبوردهای گرافانا.",
-      en: "Comprehensive enterprise LMS deployed for prominent organizations including Isfahan Municipality and Jahad Daneshgahi. Features an interactive certificate design suite powered by Konva.js, background asynchronous pipeline for large Excel datasets with live progress feedback, and server telemetry telemetry via InfluxDB and Grafana.",
+      fa: "سامانه نما یک پلتفرم جامع مدیریت آموزش و فرایندهای آموزشی سازمانی است که با هدف یکپارچه‌سازی مدیریت دوره‌ها، کلاس‌ها، اساتید، کارمندان و دپارتمان‌های سازمان توسعه یافته است. این سامانه امکاناتی مانند مدیریت کاربران و سطوح دسترسی، ورود با نقش کاربر دیگر، طراحی قالب گرافیکی و صدور گواهینامه پایان دوره را فراهم می‌کند. همچنین با قابلیت ورود اطلاعات از فایل‌های Excel، پردازش‌های پس‌زمینه و ارائه گزارش وضعیت عملیات، به بهبود بهره‌وری و کاهش فرایندهای دستی کمک می‌کند. این سامانه در مجموعه‌هایی از جمله توکانیرو سپهان، شهرداری اصفهان و جهاد دانشگاهی تهران مورد استفاده قرار گرفته است. نما با ارائه ابزارهای مدیریتی و آموزشی یکپارچه، به سازماندهی بهتر فرایندهای آموزشی و مدیریت متمرکز اطلاعات کمک می‌کند.\n\nمجموعه‌های استفاده‌کننده از سامانه:\n• [توکانیرو سپهان](https://smt.tukaniroo.ir/)\n• [سامانه آموزشی شهرداری اصفهان](https://new.shahrvandedu.ir/)\n• [جهاد دانشگاهی تهران](https://jtehran.com/)",
+      en: "Nama LMS is a comprehensive enterprise learning management platform developed to unify the administration of courses, classes, instructors, employees, and organizational departments. It provides features such as user and role-based access management, user impersonation, graphical template design, and course completion certificate issuance. Additionally, with Excel data importing, background processing, and operational status reporting, it enhances productivity and reduces manual workflows. This platform is deployed across organizations including Tukaniroo Sepahan, Isfahan Municipality, and Jahad Daneshgahi Tehran.\n\nOrganizations using the platform:\n• [Tukaniroo Sepahan](https://smt.tukaniroo.ir/)\n• [Isfahan Municipality Education Portal](https://new.shahrvandedu.ir/)\n• [Jahad Daneshgahi Tehran](https://jtehran.com/)",
     },
     featured: true,
   },

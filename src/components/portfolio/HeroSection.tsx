@@ -10,7 +10,6 @@ import {
   Chip,
   Grid,
   Card,
-  CardContent,
 } from "@mui/material";
 import {
   RocketLaunch as RocketIcon,
@@ -18,9 +17,6 @@ import {
   Download as DownloadIcon,
   ArrowForward as ArrowForwardIcon,
   ArrowBack as ArrowBackIcon,
-  Speed as SpeedIcon,
-  Hub as HubIcon,
-  Storage as StorageIcon,
   WorkHistory as WorkOutlineIcon,
 } from "@mui/icons-material";
 import { useLanguage } from "@/context/LanguageContext";
@@ -28,13 +24,6 @@ import { PORTFOLIO_INFO } from "@/data/portfolioData";
 
 export const HeroSection: React.FC = () => {
   const { isRtl, t } = useLanguage();
-
-  const statIcons = [
-    <WorkOutlineIcon key="1" color="primary" />,
-    <HubIcon key="2" color="secondary" />,
-    <SpeedIcon key="3" color="success" />,
-    <StorageIcon key="4" color="info" />,
-  ];
 
   return (
     <Box
@@ -210,39 +199,6 @@ export const HeroSection: React.FC = () => {
               </Box>
             </Box>
           </Grid>
-        </Grid>
-
-        {/* Quick Stats Grid */}
-        <Grid container spacing={2.5} sx={{ mt: { xs: 6, md: 8 } }}>
-          {PORTFOLIO_INFO.stats.map((stat, idx) => (
-            <Grid key={idx} size={{ xs: 6, md: 3 }}>
-              <Card>
-                <CardContent sx={{ p: 2.5, "&:last-child": { pb: 2.5 } }}>
-                  <Box sx={{ display: "flex", alignItems: "center", gap: 1.5, mb: 1 }}>
-                    <Box
-                      sx={{
-                        width: 36,
-                        height: 36,
-                        borderRadius: 1.5,
-                        bgcolor: "action.hover",
-                        display: "flex",
-                        alignItems: "center",
-                        justifyContent: "center",
-                      }}
-                    >
-                      {statIcons[idx]}
-                    </Box>
-                    <Typography variant="h4">
-                      {isRtl ? stat.value : stat.enValue}
-                    </Typography>
-                  </Box>
-                  <Typography variant="body2" color="text.secondary">
-                    {isRtl ? stat.label.fa : stat.label.en}
-                  </Typography>
-                </CardContent>
-              </Card>
-            </Grid>
-          ))}
         </Grid>
       </Container>
     </Box>

@@ -351,7 +351,31 @@ export default function ProjectDetailsPage() {
                 whiteSpace: "pre-line",
               }}
             >
-              {isRtl ? project.description.fa : project.description.en}
+              {(isRtl ? project.description.fa : project.description.en)
+                .split(/(\[[^\]]+\]\([^)]+\))/g)
+                .map((part, idx) => {
+                  const match = part.match(/^\[([^\]]+)\]\(([^)]+)\)$/);
+                  if (match) {
+                    return (
+                      <Box
+                        key={idx}
+                        component="a"
+                        href={match[2]}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        sx={{
+                          color: "primary.main",
+                          fontWeight: 600,
+                          textDecoration: "none",
+                          "&:hover": { textDecoration: "underline" },
+                        }}
+                      >
+                        {match[1]}
+                      </Box>
+                    );
+                  }
+                  return part;
+                })}
             </Typography>
           </Card>
         </Box>

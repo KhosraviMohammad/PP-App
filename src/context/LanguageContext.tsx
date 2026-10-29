@@ -35,7 +35,7 @@ const translations: Record<Language, Record<string, string>> = {
     "hero.name": "محمد خسروی",
     "hero.role": "مهندس نرم‌افزار و توسعه‌دهنده فول‌استک",
     "hero.bio":
-      "توسعه‌دهنده نرم‌افزار با تمرکز بر معماری سیستم‌های توزیع‌شده، استریم بلادرنگ داده‌ها با Kafka و MQTT، پایگاه‌های داده رابطه‌ای و سری‌زمانی و بهینه‌سازی کارایی در مقیاس بالا.",
+      "من دنبال اینم که بفهمم مشکل واقعی کجاست، بهترین راه‌حل رو طراحی کنم و با نرم‌افزار، کاری کنم که مسائل سخت ساده‌تر حل بشن.",
     "hero.cta.projects": "مشاهده پروژه‌ها",
     "hero.cta.contact": "ارتباط با من",
     "hero.cta.blog": "مطالعه مقالات",
@@ -54,9 +54,9 @@ const translations: Record<Language, Record<string, string>> = {
     "about.title": "درباره من",
     "about.subtitle": "نگاهی به مسیر تخصصی، معماری و فلسفه کاری من",
     "about.p1":
-      "من محمد خسروی، کارشناس ارشد مهندسی نرم‌افزار هستم. هدف من خلق راه‌حل‌های مهندسی تمیز، پایدار و با کارایی بالا برای مسائل پیچیده مقیاس‌پذیر است.",
+      "من مهندس نرم‌افزار و توسعه‌دهنده وب هستم و در زمینه طراحی معماری، توسعه و بهینه‌سازی سامانه‌های نرم‌افزاری فعالیت می‌کنم. در مسیر حرفه‌ای خود، تجربه کار با بک‌اند، فرانت‌اند، پایگاه‌های داده و زیرساخت را کسب کرده‌ام و در توسعه سامانه‌های سازمانی، آموزشی و صنعتی مشارکت داشته‌ام.",
     "about.p2":
-      "تسلط بر الگوهای معماری نرم‌افزار (از جمله MVC، Pipe & Filter و Broker) و استفاده هدفمند از ابزارهای مقرون‌به‌صرفه و مدرن، به من این امکان را می‌دهد که سرعت توسعه، پایداری و نگه‌داشت‌پذیری پروژه‌ها را به حداکثر برسانم.",
+      "تمرکز من بر تحلیل مسائل، طراحی معماری مناسب، انتخاب راهکارهای فنی مؤثر و ساخت نرم‌افزارهایی است که از نظر عملکرد، ساختار و قابلیت توسعه پاسخگوی نیازهای واقعی باشند. همچنین به بهینه‌سازی سیستم‌ها، بررسی فناوری‌های جدید و توسعه راهکارهای نوآورانه علاقه‌مندم.",
     "about.eduTitle": "تحصیلات دانشگاهی",
     "about.edu1.degree": "کارشناسی ارشد مهندسی نرم‌افزار",
     "about.edu1.school": "دانشگاه آزاد اسلامی، واحد نجف‌آباد",
@@ -137,7 +137,7 @@ const translations: Record<Language, Record<string, string>> = {
     "hero.name": "Mohammad Khosravi",
     "hero.role": "Software Engineer & Fullstack Developer",
     "hero.bio":
-      "Software engineer with proven experience in architecting distributed systems, real-time log streaming with Kafka and MQTT, high-performance relational databases, and enterprise web applications.",
+      "I strive to uncover the real problem, design the best solution, and use software to make complex challenges simpler to solve.",
     "hero.cta.projects": "Explore Projects",
     "hero.cta.contact": "Get in Touch",
     "hero.cta.blog": "Read Articles",
@@ -156,9 +156,9 @@ const translations: Record<Language, Record<string, string>> = {
     "about.title": "About Me",
     "about.subtitle": "Architectural mindset, engineering philosophy, and academic background",
     "about.p1":
-      "I am Mohammad Khosravi, a Software Engineer pursuing my Master's Degree. My passion lies in designing clean, cost-effective, and highly performant solutions for complex business and architectural problems.",
+      "I am a Software Engineer and Web Developer specializing in the architectural design, development, and optimization of software systems. Throughout my professional journey, I have gained hands-on experience across backend, frontend, databases, and infrastructure, contributing to enterprise, educational, and industrial platforms.",
     "about.p2":
-      "Proficient in architectural patterns (MVC, Pipe & Filter, Broker) and modern distributed tooling, I focus on maximizing developer velocity, code maintainability, and system resilience.",
+      "My focus lies in problem analysis, designing sound architectures, selecting effective technical solutions, and building software that meets real-world needs in terms of performance, structure, and scalability. I am also passionate about system optimization, exploring emerging technologies, and developing innovative solutions.",
     "about.eduTitle": "Academic Background",
     "about.edu1.degree": "Master's Degree in Software Engineering",
     "about.edu1.school": "Islamic Azad University, Najafabad Branch",
