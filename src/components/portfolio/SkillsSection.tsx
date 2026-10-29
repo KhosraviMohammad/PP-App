@@ -117,7 +117,7 @@ export const SkillsSection: React.FC = () => {
                         <Typography
                           variant="body2"
                           color={skill.highlight ? "text.primary" : "text.secondary"}
-                          fontWeight={skill.highlight ? 600 : 400}
+                          sx={{ fontWeight: skill.highlight ? 600 : 400 }}
                         >
                           {skill.name}
                         </Typography>
